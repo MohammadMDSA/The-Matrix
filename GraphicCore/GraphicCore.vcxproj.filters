@@ -5,16 +5,30 @@
       <UniqueIdentifier>335134be-27e4-41cf-a1bb-924b02ff4465</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tga;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Sources">
+      <UniqueIdentifier>{a901ee0d-d42b-4b78-8397-66a8626c0684}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{35355063-1cae-459b-afb9-3158e22f6676}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Class1.cpp" />
-    <ClCompile Include="..\Direct3D UWP Game1\Game.cpp" />
-    <ClCompile Include="..\Direct3D UWP Game1\pch.cpp" />
+    <ClCompile Include="..\Direct3D UWP Game1\Game.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Direct3D UWP Game1\pch.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Class1.h" />
-    <ClInclude Include="..\Direct3D UWP Game1\Game.h" />
-    <ClInclude Include="..\Direct3D UWP Game1\pch.h" />
-    <ClInclude Include="..\Direct3D UWP Game1\StepTimer.h" />
+    <ClInclude Include="..\Direct3D UWP Game1\StepTimer.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Direct3D UWP Game1\Game.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Direct3D UWP Game1\pch.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
