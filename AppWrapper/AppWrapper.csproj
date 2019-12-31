@@ -141,8 +141,12 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GraphicCore\GraphicCore.vcxproj">
-      <Project>{05c9c481-8aab-4ac3-80fd-7173f5406c3c}</Project>
+      <Project>{893f25d3-f576-4a35-a675-710969581a80}</Project>
       <Name>GraphicCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Types\Types.vcxproj">
+      <Project>{004cd02f-4e12-49c5-9c62-88c38deeef3a}</Project>
+      <Name>Types</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
