@@ -8,9 +8,20 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp" />
+    <ClCompile Include="Behaviour.cpp" />
+    <ClCompile Include="ObjectBase.cpp" />
+    <ClCompile Include="Transform.cpp" />
+    <ClCompile Include="CameraComponent.cpp" />
+    <ClCompile Include="ObjectComponentBase.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Behaviour.h" />
+    <ClInclude Include="ObjectBase.h" />
+    <ClInclude Include="Transform.h" />
+    <ClInclude Include="CameraComponent.h" />
+    <ClInclude Include="ObjectComponentBase.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
