@@ -3,10 +3,20 @@
 
 void Types::CameraComponent::Update()
 {
-	throw ref new Platform::NotImplementedException();
+	
 }
 
 void Types::CameraComponent::Setup()
 {
-	throw ref new Platform::NotImplementedException();
+	
+}
+
+void Types::CameraComponent::SetObjectBase(Types::ObjectBase^ obj)
+{
+	this->ObjectBase = obj;
+}
+
+Types::ObjectBase^ Types::CameraComponent::SetObjectBase()
+{
+	return this->ObjectBase;
 }

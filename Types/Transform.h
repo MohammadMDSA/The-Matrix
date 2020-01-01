@@ -9,9 +9,9 @@ namespace Types
 	internal:
 		DirectX::SimpleMath::Matrix GetWorldMatrix();
 	private:
-		DirectX::SimpleMath::Vector3 m_position;
-		DirectX::SimpleMath::Vector3 m_rotation;
-		DirectX::SimpleMath::Vector3 m_scale;
+		DirectX::SimpleMath::Vector3 Position;
+		DirectX::SimpleMath::Vector3 Rotation;
+		DirectX::SimpleMath::Vector3 Scale;
 
 	};
 

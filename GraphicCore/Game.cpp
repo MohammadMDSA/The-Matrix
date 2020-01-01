@@ -20,7 +20,7 @@ Game::Game() :
 }
 
 // Initialize the Direct3D resources required to run.
-void Game::Initialize(Windows::UI::Core::CoreWindow^ window, int width, int height, int rotation)
+void Game::Initialize(Windows::UI::Core::CoreWindow^ window, int width, int height, int rotation, const Platform::Array<Types::ObjectBase^>^ objects)
 {
 	m_window = reinterpret_cast<IUnknown*>(window);
 	m_outputWidth = std::max(width, 1);
@@ -31,6 +31,11 @@ void Game::Initialize(Windows::UI::Core::CoreWindow^ window, int width, int heig
 
 	this->CreateResources();
 
+	for each (Types::ObjectBase^ var in objects)
+	{
+		var->Setup();
+	}
+
 	// TODO: Change the timer settings if you want something other than the default variable timestep mode.
 	// e.g. for 60 FPS fixed timestep update logic, call:
 	/*
@@ -40,18 +45,18 @@ void Game::Initialize(Windows::UI::Core::CoreWindow^ window, int width, int heig
 }
 
 // Executes the basic game loop.
-void Game::Tick()
+void Game::Tick(const Platform::Array<Types::ObjectBase^>^ objects)
 {
 	m_timer.Tick([&]()
 	{
-		Update(m_timer);
+		Update(m_timer, objects);
 	});
 
 	Render();
 }
 
 // Updates the world.
-void Game::Update(DX::StepTimer& timer)
+void Game::Update(DX::StepTimer& timer, const Platform::Array<Types::ObjectBase^>^ objects)
 {
 	float elapsedTime = float(timer.GetElapsedSeconds());
 
@@ -68,11 +73,11 @@ void Game::Render()
 		return;
 	}
 
-	Clear();
+	this->Clear();
 
 	// TODO: Add your rendering code here.
 
-	Present();
+	this->Present();
 }
 
 // Helper method to clear the back buffers.

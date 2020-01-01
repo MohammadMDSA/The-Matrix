@@ -1,18 +1,20 @@
 #pragma once
 
 #include "ObjectComponentBase.h"
-#include "Behaviour.h"
-#include "ObjectBase.h"
-
+#include "Drawable.h"
 
 namespace Types
 {
-	public ref class CameraComponent sealed : public IObjectComponentBase
+	public ref class RendererComponent sealed : public IObjectComponentBase, public IDrawable
 	{
 	public:
 
+		// Inherited via IObjectComponentBase
 		virtual void Update();
 		virtual void Setup();
+
+		// Inherited via IDrawable
+		virtual void Draw();
 
 		// Inherited via IObjectComponentBase
 		virtual void SetObjectBase(Types::ObjectBase^ obj);

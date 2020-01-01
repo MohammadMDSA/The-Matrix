@@ -19,10 +19,10 @@ namespace GraphicCore
 		Game();
 
 		// Initialization and management
-		void Initialize(Windows::UI::Core::CoreWindow^ window, int width, int height, int rotation);
+		void Initialize(Windows::UI::Core::CoreWindow^ window, int width, int height, int rotation, const Platform::Array<Types::ObjectBase^>^ objects);
 
 		// Basic game loop
-		void Tick();
+		void Tick(const Platform::Array<Types::ObjectBase^>^ objects);
 
 		// Messages
 		void OnActivated();
@@ -38,7 +38,7 @@ namespace GraphicCore
 
 	private:
 
-		void Update(DX::StepTimer& timer);
+		void Update(DX::StepTimer& timer, const Platform::Array<Types::ObjectBase^>^ objects);
 		void Render();
 
 		void Clear();

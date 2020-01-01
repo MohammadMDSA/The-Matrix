@@ -1,23 +1,18 @@
 #pragma once
-
+#include "pch.h"
 #include "Behaviour.h"
 #include "ObjectBase.h"
+#include "DependencySaticfier.h"
 
-ref class ObjectBase;
 namespace Types
 {
+	ref class ObjectBase;
 
-	ref class ObjectComponentBase abstract : public Behaviour
+	public interface class IObjectComponentBase : IBehaviour
 	{
 
 	public:
-		// Inherited via Behaviour
-		virtual void Update() abstract;
-		virtual void Setup() abstract;
-		void SetObjectBase(Types::ObjectBase^ object);
 
-	protected private:
-		ObjectBase^ ObjectBase;
 	};
 
 }

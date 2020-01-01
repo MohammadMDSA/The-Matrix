@@ -10,12 +10,15 @@ using Windows.Graphics.Display;
 using Windows.ApplicationModel.Activation;
 using Windows.UI.ViewManagement;
 using Windows.Foundation;
+using Types;
 
 namespace AppWrapper
 {
 
     public class App : IFrameworkView
     {
+
+        private ObjectBase[] oo;
 
         private bool Exit;
         private bool Visible;
@@ -94,7 +97,9 @@ namespace AppWrapper
                 outputWidth = tmp;
             }
 
-            this.Game.Initialize(window, outputWidth, outputHeight, rotation);
+            Ini();
+
+            this.Game.Initialize(window, outputWidth, outputHeight, rotation, oo);
         }
 
         public void Load(string entryPoint) { }
@@ -105,7 +110,7 @@ namespace AppWrapper
             {
                 if (this.Visible)
                 {
-                    this.Game.Tick();
+                    this.Game.Tick(oo);
 
                     CoreWindow.GetForCurrentThread().Dispatcher.ProcessEvents(CoreProcessEventsOption.ProcessAllIfPresent);
                 }
@@ -311,6 +316,12 @@ namespace AppWrapper
             }
 
             this.Game.OnWindowSizeChanged(outputWidth, outputHeight, rotation);
+        }
+
+        private void Ini()
+        {
+            var obj = new ObjectBase();
+            //obj.
         }
     }
 

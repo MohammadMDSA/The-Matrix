@@ -7,6 +7,7 @@
 #include <cmath>
 #include <exception>
 #include <stdint.h>
+#include "..//Types/pch.h"
 
 namespace DX
 {
